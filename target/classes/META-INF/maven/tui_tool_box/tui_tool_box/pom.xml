@@ -1,0 +1,44 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>tui_tool_box</groupId>
+	<artifactId>tui_tool_box</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+
+	<!-- 依存ライブラリ -->
+	<dependencies>
+
+		<!-- ★★★ JLine（上下キーで操作するCLI）★★★ -->
+		<dependency>
+			<groupId>org.jline</groupId>
+			<artifactId>jline</artifactId>
+			<version>3.23.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.googlecode.lanterna</groupId>
+			<artifactId>lanterna</artifactId>
+			<version>3.1.2</version>
+		</dependency>
+
+	</dependencies>
+
+	<!-- コンパイラ設定 -->
+	<build>
+		<sourceDirectory>src/main/java</sourceDirectory>
+
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.13.0</version>
+				<configuration>
+					<release>19</release>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>
