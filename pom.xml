@@ -6,6 +6,7 @@
 	<groupId>tui_tool_box</groupId>
 	<artifactId>tui_tool_box</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
 
 	<!-- 依存ライブラリ -->
 	<dependencies>
@@ -27,6 +28,7 @@
 
 	<!-- コンパイラ設定 -->
 	<build>
+		<finalName>main_tui</finalName>
 		<sourceDirectory>src/main/java</sourceDirectory>
 
 		<plugins>
@@ -37,6 +39,28 @@
 				<configuration>
 					<release>19</release>
 				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-shade-plugin</artifactId>
+				<version>3.5.2</version>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>shade</goal>
+						</goals>
+						<configuration>
+							<createDependencyReducedPom>false</createDependencyReducedPom>
+							<transformers>
+								<transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+									<mainClass>main_tui</mainClass>
+								</transformer>
+							</transformers>
+						</configuration>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
 	</build>
